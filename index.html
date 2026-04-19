@@ -1,655 +1,455 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mazaj Content</title>
-  <meta name="description" content="Mazaj Content helps brands improve how they are presented through Arabic-English translation, strategic content, and premium domain opportunities." />
-  <style>
-    :root {
-      --bg: #f7f3ec;
-      --bg-2: #fffdf9;
-      --surface: rgba(255,255,255,0.78);
-      --surface-strong: #ffffff;
-      --border: rgba(31, 25, 20, 0.10);
-      --text: #1c1916;
-      --muted: #5f5951;
-      --soft: #8a8178;
-      --accent: #8b5e3c;
-      --accent-dark: #6f4b31;
-      --accent-soft: #efe3d7;
-      --shadow: 0 20px 60px rgba(34, 26, 18, 0.08);
-      --radius-xl: 30px;
-      --radius-lg: 22px;
-      --radius-md: 18px;
-      --container: 1180px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mazaj Content — Precision language & digital identity studio. We don’t just write or translate. We engineer clarity, authority, and lasting presence so brands are remembered for the right reasons.">
+    <title>Mazaj Content | Studio for Brands That Want to Be Heard Differently</title>
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(139,94,60,0.07), transparent 28%),
-        radial-gradient(circle at right, rgba(139,94,60,0.05), transparent 20%),
-        linear-gradient(180deg, #fbf8f2 0%, #f6f1e9 100%);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-
-    .container {
-      width: min(var(--container), calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    .site-header {
-      padding: 22px 0;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      padding: 14px 18px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: rgba(255,255,255,0.62);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 8px 30px rgba(34, 26, 18, 0.05);
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    .brand-mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, var(--accent) 0%, #c4906a 100%);
-      color: white;
-      font-size: 15px;
-      font-weight: 700;
-      box-shadow: 0 10px 24px rgba(139,94,60,0.24);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .nav-links a:hover { color: var(--text); }
-
-    .hero {
-      padding: 28px 0 84px;
-    }
-
-    .hero-grid,
-    .overview-grid,
-    .split-grid,
-    .contact-grid,
-    .footer-grid {
-      display: grid;
-      gap: 42px;
-    }
-
-    .hero-grid {
-      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
-      align-items: center;
-      gap: 48px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(139,94,60,0.16);
-      background: rgba(255,255,255,0.6);
-      color: var(--accent-dark);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-    }
-
-    h1, h2, h3, p { margin: 0; }
-
-    h1 {
-      margin-top: 20px;
-      font-size: clamp(42px, 6vw, 78px);
-      line-height: 1.02;
-      letter-spacing: -0.055em;
-      max-width: 820px;
-      font-weight: 700;
-    }
-
-    .hero p.lead {
-      margin-top: 24px;
-      max-width: 700px;
-      font-size: 18px;
-      line-height: 1.9;
-      color: var(--muted);
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 34px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 54px;
-      padding: 0 22px;
-      border-radius: 18px;
-      font-weight: 600;
-      font-size: 14px;
-      transition: 0.2s ease;
-      border: 1px solid transparent;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      box-shadow: 0 18px 36px rgba(139,94,60,0.22);
-    }
-    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
-
-    .btn-secondary {
-      border-color: rgba(31,25,20,0.10);
-      background: rgba(255,255,255,0.72);
-      color: var(--text);
-    }
-    .btn-secondary:hover { background: #fff; }
-
-    .hero-note {
-      margin-top: 18px;
-      font-size: 14px;
-      color: var(--soft);
-    }
-
-    .hero-card,
-    .info-card,
-    .service-card,
-    .value-card,
-    .domain-card,
-    .contact-card,
-    .showcase-card {
-      border: 1px solid var(--border);
-      border-radius: var(--radius-xl);
-      background: var(--surface);
-      backdrop-filter: blur(12px);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-card {
-      padding: 24px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(255,255,255,0.62), rgba(255,255,255,0));
-      pointer-events: none;
-    }
-
-    .hero-card > * { position: relative; z-index: 1; }
-
-    .hero-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .small-label {
-      font-size: 13px;
-      color: var(--soft);
-    }
-
-    .small-value {
-      margin-top: 4px;
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-    }
-
-    .chip {
-      padding: 9px 12px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent-dark);
-      font-size: 12px;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    .stack {
-      display: grid;
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .info-card {
-      padding: 16px 18px;
-      border-radius: var(--radius-lg);
-      background: rgba(255,255,255,0.85);
-    }
-
-    .section {
-      padding: 82px 0;
-    }
-
-    .section-heading {
-      max-width: 760px;
-      margin-bottom: 28px;
-    }
-
-    .section-heading h2 {
-      margin-top: 16px;
-      font-size: clamp(34px, 4.4vw, 54px);
-      line-height: 1.08;
-      letter-spacing: -0.045em;
-      font-weight: 700;
-    }
-
-    .section-heading p {
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.9;
-    }
-
-    .overview-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .value-card {
-      padding: 30px;
-      background: rgba(255,255,255,0.72);
-    }
-
-    .value-card h3,
-    .service-card h3,
-    .domain-card h3,
-    .contact-card h3 {
-      font-size: 24px;
-      line-height: 1.2;
-      letter-spacing: -0.03em;
-    }
-
-    .value-card p,
-    .service-card p,
-    .domain-card p,
-    .contact-card p,
-    .showcase-card p {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.85;
-    }
-
-    .split-wrap {
-      padding: 84px 0;
-      background: linear-gradient(180deg, rgba(255,255,255,0.38), rgba(255,255,255,0.10));
-      border-top: 1px solid rgba(31,25,20,0.06);
-      border-bottom: 1px solid rgba(31,25,20,0.06);
-    }
-
-    .split-grid {
-      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-      align-items: start;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .service-card {
-      padding: 28px;
-      background: rgba(255,255,255,0.78);
-    }
-
-    .service-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, rgba(139,94,60,0.14), rgba(139,94,60,0.04));
-      border: 1px solid rgba(139,94,60,0.10);
-      margin-bottom: 16px;
-    }
-
-    .domains-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .domain-card {
-      padding: 28px;
-      background: rgba(255,255,255,0.82);
-    }
-
-    .domain-card ul {
-      margin: 16px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
-      line-height: 1.9;
-    }
-
-    .showcase-card {
-      padding: 34px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.72));
-    }
-
-    .metric-row {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 22px;
-    }
-
-    .metric {
-      padding: 18px;
-      border-radius: 18px;
-      background: #fff;
-      border: 1px solid var(--border);
-    }
-
-    .metric strong {
-      display: block;
-      font-size: 24px;
-      letter-spacing: -0.04em;
-    }
-
-    .metric span {
-      display: block;
-      margin-top: 6px;
-      font-size: 13px;
-      color: var(--soft);
-    }
-
-    .contact-card {
-      padding: 36px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.74));
-    }
-
-    .contact-grid {
-      grid-template-columns: minmax(0, 1fr) auto;
-      align-items: end;
-    }
-
-    .contact-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      min-width: 280px;
-    }
-
-    .footer {
-      padding: 24px 0 40px;
-    }
-
-    .footer-grid {
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      color: var(--soft);
-      font-size: 14px;
-    }
-
-    @media (max-width: 1024px) {
-      .hero-grid,
-      .split-grid,
-      .contact-grid,
-      .footer-grid,
-      .overview-grid,
-      .domains-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-actions {
-        min-width: 0;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .container { width: min(var(--container), calc(100% - 24px)); }
-      .nav { border-radius: 24px; padding: 14px; }
-      .nav-links { display: none; }
-      .hero { padding: 18px 0 64px; }
-      .section, .split-wrap { padding: 64px 0; }
-      .hero-card, .value-card, .service-card, .domain-card, .contact-card, .showcase-card { padding: 22px; }
-      .actions, .contact-actions { width: 100%; }
-      .btn { width: 100%; }
-      .metric-row { grid-template-columns: 1fr; }
-      .hero-top { flex-direction: column; align-items: flex-start; }
-    }
-  </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <header class="site-header">
-    <div class="container">
-      <nav class="nav">
-        <div class="brand">
-          <div class="brand-mark">MC</div>
-          <span>Mazaj Content</span>
-        </div>
-        <div class="nav-links">
-          <a href="#services">Services</a>
-          <a href="#domains">Domains</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
-    </div>
-  </header>
+<body class="bg-[#0a1428] text-slate-200 overflow-x-hidden">
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Translation · Content · Premium Naming</div>
-          <h1>Sharpen how your brand reads, sounds, and presents itself online.</h1>
-          <p class="lead">Mazaj Content helps businesses improve how they are presented through Arabic-English translation, strategic content, and access to stronger premium domain opportunities that fit ambitious brand positioning.</p>
-          <div class="actions">
-            <a class="btn btn-primary" href="mailto:hello@mazajcontent.com">Start a Project</a>
-            <a class="btn btn-secondary" href="#services">Explore Services</a>
-          </div>
-          <p class="hero-note">For businesses, founders, and brand owners who want clearer communication and stronger digital presence.</p>
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
+        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5 flex items-center justify-between gap-4">
+            <div class="flex items-center min-w-0">
+                <img
+                    src="https://i.ibb.co/Kx7qp1d1/mazaj.png"
+                    alt="Mazaj Content"
+                    class="logo-img"
+                >
+            </div>
+
+            <div class="hidden lg:flex items-center gap-x-9 text-sm uppercase font-medium tracking-[0.5px]">
+                <a href="#craft" class="nav-link">The Craft</a>
+                <a href="#expertise" class="nav-link">Expertise</a>
+                <a href="#transform" class="nav-link">Transformations</a>
+                <a href="#identity" class="nav-link">Digital Identity</a>
+                <a href="#connect" class="nav-link">Connect</a>
+            </div>
+
+            <div class="flex items-center gap-x-3 sm:gap-x-4">
+                <a
+                    href="mailto:hello@mazajcontent.com"
+                    class="hidden sm:inline-flex px-5 lg:px-7 py-3 bg-white text-[#0a1428] hover:bg-[#00d4ff] hover:text-[#0a1428] rounded-3xl text-xs sm:text-sm font-semibold items-center gap-2 transition"
+                >
+                    START A PROJECT
+                    <span class="text-lg leading-none">↗</span>
+                </a>
+
+                <button
+                    type="button"
+                    class="lg:hidden w-11 h-11 flex items-center justify-center"
+                    aria-label="Toggle mobile menu"
+                    aria-expanded="false"
+                    aria-controls="mobileMenu"
+                    id="mobileMenuButton"
+                >
+                    <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
         </div>
 
-        <aside class="hero-card">
-          <div class="hero-top">
-            <div>
-              <div class="small-label">Brand Focus</div>
-              <div class="small-value">Language + Positioning</div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-[#0a1428] border-t border-white/10 px-4 sm:px-6 py-6">
+            <div class="flex flex-col gap-y-5 text-base">
+                <a href="#craft" class="mobile-menu-link py-3 border-b border-white/10">The Craft</a>
+                <a href="#expertise" class="mobile-menu-link py-3 border-b border-white/10">Expertise</a>
+                <a href="#transform" class="mobile-menu-link py-3 border-b border-white/10">Transformations</a>
+                <a href="#identity" class="mobile-menu-link py-3 border-b border-white/10">Digital Identity</a>
+                <a href="#connect" class="mobile-menu-link py-3">Connect</a>
+                <a href="mailto:hello@mazajcontent.com" class="mt-4 block text-center py-4 bg-white text-[#0a1428] rounded-3xl font-semibold">
+                    START A PROJECT
+                </a>
             </div>
-            <div class="chip">Independent Brand Studio</div>
-          </div>
-          <div class="stack">
-            <div class="info-card">
-              <div class="small-label">Core Work</div>
-              <div class="small-value" style="font-size:17px;">Arabic ↔ English translation, content, editing</div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero-grid pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center">
+        <div class="max-w-screen-2xl mx-auto w-full">
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                <div class="lg:col-span-7">
+                    <div class="inline-flex items-center gap-x-2 text-[10px] sm:text-xs uppercase tracking-[1.5px] bg-white/10 text-[#00d4ff] px-4 sm:px-5 h-8 rounded-3xl mb-6 sm:mb-8">
+                        <div class="w-2 h-2 rounded-full bg-[#00d4ff] animate-pulse"></div>
+                        STUDIO ESTABLISHED 2024 • GLOBAL BY DESIGN
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl leading-[0.95] font-light tracking-[-1.5px] lg:tracking-[-2px] max-w-3xl">
+                        We make brands<br>
+                        <span class="serif italic text-[#00d4ff]">sound impossible to forget.</span>
+                    </h1>
+
+                    <p class="mt-8 sm:mt-10 text-xl sm:text-2xl text-slate-300 max-w-lg font-light leading-tight">
+                        Not louder. Clearer.<br>
+                        Not more words. Better perception.
+                    </p>
+
+                    <div class="mt-10 sm:mt-12 flex flex-col sm:flex-row sm:flex-wrap gap-4">
+                        <a
+                            href="#connect"
+                            class="px-7 sm:px-10 py-4 sm:py-6 text-base sm:text-lg font-medium bg-[#00d4ff] text-[#0a1428] hover:bg-white rounded-3xl flex items-center justify-center gap-x-3 transition"
+                        >
+                            LET’S ELEVATE YOUR BRAND
+                            <span class="text-xl sm:text-2xl">→</span>
+                        </a>
+
+                        <a
+                            href="#expertise"
+                            class="px-7 sm:px-10 py-4 sm:py-6 text-base sm:text-lg font-medium border border-white/30 hover:border-[#00d4ff] rounded-3xl text-center transition"
+                        >
+                            SEE THE CRAFT
+                        </a>
+                    </div>
+
+                    <div class="mt-12 sm:mt-16 flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8 text-xs uppercase">
+                        <div class="flex -space-x-4">
+                            <div class="w-7 h-7 bg-[#00d4ff]/10 border border-[#00d4ff]/30 rounded-2xl flex items-center justify-center text-xs">🇦🇪</div>
+                            <div class="w-7 h-7 bg-[#00d4ff]/10 border border-[#00d4ff]/30 rounded-2xl flex items-center justify-center text-xs">🇸🇦</div>
+                            <div class="w-7 h-7 bg-[#00d4ff]/10 border border-[#00d4ff]/30 rounded-2xl flex items-center justify-center text-xs">🇶🇦</div>
+                        </div>
+                        <div class="leading-relaxed sm:leading-none">
+                            Trusted by forward-thinking brands<br>
+                            <span class="text-slate-400">across the Middle East and beyond</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative">
+                    <div class="hidden sm:flex absolute -top-10 -right-6 lg:-top-12 lg:-right-12 w-40 h-40 lg:w-64 lg:h-64 bg-[#00d4ff]/10 rounded-[3rem] lg:rounded-[4rem] rotate-12 items-center justify-center text-[110px] lg:text-[180px] opacity-10">
+                        ✦
+                    </div>
+
+                    <div class="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6 sm:p-8 relative z-10">
+                        <div class="text-xs sm:text-sm uppercase tracking-widest mb-5 sm:mb-6 text-slate-400">
+                            CURRENT CLIENT BRIEF
+                        </div>
+                        <p class="text-2xl sm:text-3xl leading-tight serif italic">
+                            “Help us sound like the most sophisticated hospitality group in the region — without losing our soul.”
+                        </p>
+                        <div class="mt-8 sm:mt-12 text-[#00d4ff] text-xs sm:text-sm flex items-center gap-2">
+                            <span class="block w-3 h-px bg-[#00d4ff]"></span>
+                            DELIVERED IN 11 DAYS • 4 LANGUAGES • 3 MARKETS
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="info-card">
-              <div class="small-label">Business Angle</div>
-              <div class="small-value" style="font-size:17px;">Clearer messaging and stronger presentation</div>
+        </div>
+    </header>
+
+    <!-- THE CRAFT / PHILOSOPHY -->
+    <section id="craft" class="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+                <div class="lg:w-5/12">
+                    <span class="px-4 py-2 text-xs bg-[#00d4ff]/10 text-[#00d4ff] rounded-3xl">OUR BELIEF</span>
+                    <h2 class="section-title mt-6 text-white">
+                        Every brand has a voice.<br>
+                        Most are simply speaking too softly.
+                    </h2>
+                    <p class="mt-8 text-lg sm:text-xl text-slate-400 max-w-md leading-relaxed">
+                        Mazaj Content exists to give brands the exact language, tone, and digital presence they deserve — the one that commands attention, builds trust, and creates memory.
+                    </p>
+                </div>
+
+                <div class="lg:w-7/12 grid grid-cols-1 md:grid-cols-3 gap-6 text-sm w-full">
+                    <div class="bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-8">
+                        <div class="text-[#00d4ff] text-5xl mb-6">01</div>
+                        <h4 class="font-medium text-lg">Clarity First</h4>
+                        <p class="mt-3 text-slate-400">We remove noise so your message lands with precision and power.</p>
+                    </div>
+
+                    <div class="bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-8">
+                        <div class="text-[#00d4ff] text-5xl mb-6">02</div>
+                        <h4 class="font-medium text-lg">Perception Engineered</h4>
+                        <p class="mt-3 text-slate-400">Language is not decoration. It is the first and last impression your audience will remember.</p>
+                    </div>
+
+                    <div class="bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-8">
+                        <div class="text-[#00d4ff] text-5xl mb-6">03</div>
+                        <h4 class="font-medium text-lg">Identity as Strategy</h4>
+                        <p class="mt-3 text-slate-400">We treat domains, copy, and multilingual presence as one unified brand asset.</p>
+                    </div>
+                </div>
             </div>
-            <div class="info-card">
-              <div class="small-label">Premium Domains</div>
-              <div class="small-value" style="font-size:17px;">Brandable names for stronger digital identity</div>
-            </div>
-          </div>
-        </aside>
-      </div>
+        </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow">What Mazaj Content Does</div>
-          <h2>Not just words. Better brand presentation.</h2>
-          <p>The work combines language precision with commercial clarity. That means content that reads properly, translation that preserves intent, and naming opportunities that give brands a stronger digital impression.</p>
-        </div>
+    <!-- EXPERTISE / SERVICES -->
+    <section id="expertise" class="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#112233]">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="text-center mb-14 sm:mb-16">
+                <span class="uppercase text-xs tracking-[1px] text-[#00d4ff]">WHAT WE MASTER</span>
+                <h2 class="section-title mx-auto max-w-2xl mt-4">
+                    Four pillars. One obsession: making brands impossible to ignore.
+                </h2>
+            </div>
 
-        <div class="overview-grid">
-          <article class="value-card">
-            <h3>Translate with precision</h3>
-            <p>Arabic-English translation adapted to tone, audience, and business context rather than literal phrasing.</p>
-          </article>
-          <article class="value-card">
-            <h3>Refine the message</h3>
-            <p>Sharper website copy, service descriptions, brand language, and edited content that sounds more professional.</p>
-          </article>
-          <article class="value-card">
-            <h3>Strengthen the name</h3>
-            <p>Selected premium domains that can help a business secure a clearer, stronger, and more memorable digital identity.</p>
-          </article>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="service-card bg-[#0a1428] border border-white/10 rounded-3xl p-7 sm:p-9">
+                    <div class="text-4xl mb-8">🌍</div>
+                    <h3 class="text-2xl serif italic">Precision Translation & Localization</h3>
+                    <p class="mt-4 text-slate-400">Tone-perfect, culturally intelligent adaptation that feels native — never translated.</p>
+                    <ul class="mt-8 space-y-4 text-sm">
+                        <li>Website & digital experiences</li>
+                        <li>Marketing campaigns</li>
+                        <li>Subtitles & video voice</li>
+                    </ul>
+                </div>
+
+                <div class="service-card bg-[#0a1428] border border-white/10 rounded-3xl p-7 sm:p-9">
+                    <div class="text-4xl mb-8">✍️</div>
+                    <h3 class="text-2xl serif italic">Brand Messaging & Narrative</h3>
+                    <p class="mt-4 text-slate-400">We craft the exact words that position you as the obvious choice in any market.</p>
+                    <ul class="mt-8 space-y-4 text-sm">
+                        <li>Core story & positioning</li>
+                        <li>Website copy & landing pages</li>
+                        <li>Thought leadership & emails</li>
+                    </ul>
+                </div>
+
+                <div class="service-card bg-[#0a1428] border border-white/10 rounded-3xl p-7 sm:p-9">
+                    <div class="text-4xl mb-8">📺</div>
+                    <h3 class="text-2xl serif italic">YouTube & Audiovisual Presence</h3>
+                    <p class="mt-4 text-slate-400">Full localization for video-first brands: subtitles, scripts, channel strategy, and cultural resonance.</p>
+                    <ul class="mt-8 space-y-4 text-sm">
+                        <li>Multilingual subtitles</li>
+                        <li>Channel messaging</li>
+                        <li>Script adaptation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card bg-[#0a1428] border border-white/10 rounded-3xl p-7 sm:p-9">
+                    <div class="text-4xl mb-8">🔑</div>
+                    <h3 class="text-2xl serif italic">Premium Digital Identity</h3>
+                    <p class="mt-4 text-slate-400">Curated premium domains paired with strategic naming and positioning advice.</p>
+                    <ul class="mt-8 space-y-4 text-sm">
+                        <li>Brandable domain shortlists</li>
+                        <li>Naming architecture</li>
+                        <li>Identity-first strategy</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <section id="services" class="split-wrap">
-      <div class="container split-grid">
-        <div class="section-heading">
-          <div class="eyebrow">Services</div>
-          <h2>Built for businesses that need language to perform, not just exist.</h2>
-          <p>Mazaj Content is structured around practical business communication: language that works on websites, in brand materials, and across client-facing content.</p>
-        </div>
+    <!-- TRANSFORMATIONS -->
+    <section id="transform" class="py-20 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="flex flex-col lg:flex-row lg:justify-between lg:items-baseline gap-6 mb-10 sm:mb-12">
+                <h2 class="section-title">
+                    Real transformations.<br>
+                    Real perception shifts.
+                </h2>
 
-        <div class="services-grid">
-          <article class="service-card">
-            <div class="service-icon"></div>
-            <h3>Arabic ↔ English Translation</h3>
-            <p>Professional translation for websites, documents, service pages, and brand-facing material.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon"></div>
-            <h3>Website & Marketing Content</h3>
-            <p>Clear copy for businesses that need cleaner presentation and stronger language across digital channels.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon"></div>
-            <h3>Proofreading & Editing</h3>
-            <p>Editing that removes weakness, improves flow, and makes content look more credible and finished.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon"></div>
-            <h3>Brand Wording Support</h3>
-            <p>Sharper wording for brand descriptions, service positioning, and communication that needs a more polished voice.</p>
-          </article>
+                <a href="mailto:hello@mazajcontent.com" class="text-[#00d4ff] text-sm uppercase tracking-widest inline-flex items-center gap-x-2 hover:gap-x-3 transition-all">
+                    SEE MORE WORK <span class="text-2xl">→</span>
+                </a>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-8 lg:p-10">
+                    <div class="flex flex-col sm:flex-row sm:justify-between gap-3 text-xs uppercase mb-8">
+                        <span class="text-[#00d4ff]">Hospitality • Middle East Launch</span>
+                        <span class="bg-emerald-400/10 text-emerald-400 px-4 py-1 rounded-3xl inline-flex items-center w-fit">
+                            +340% brand recall in target markets
+                        </span>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div>
+                            <p class="uppercase text-xs text-slate-400 mb-2">BEFORE</p>
+                            <p class="text-slate-300">"We provide luxury accommodation and excellent service."</p>
+                        </div>
+
+                        <div class="border-l-2 border-[#00d4ff] pl-5 sm:pl-6">
+                            <p class="uppercase text-xs text-[#00d4ff] mb-2">AFTER • OUR VOICE</p>
+                            <p class="text-white text-xl sm:text-2xl leading-tight">
+                                “We create sanctuaries where every detail whispers quiet luxury and cultural intelligence.”
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-8 lg:p-10">
+                    <div class="flex flex-col sm:flex-row sm:justify-between gap-3 text-xs uppercase mb-8">
+                        <span class="text-[#00d4ff]">Fintech • European Expansion</span>
+                        <span class="bg-emerald-400/10 text-emerald-400 px-4 py-1 rounded-3xl inline-flex items-center w-fit">
+                            Conversion rate +67%
+                        </span>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div>
+                            <p class="uppercase text-xs text-slate-400 mb-2">BEFORE</p>
+                            <p class="text-slate-300">"Secure payments and smart financial tools."</p>
+                        </div>
+
+                        <div class="border-l-2 border-[#00d4ff] pl-5 sm:pl-6">
+                            <p class="uppercase text-xs text-[#00d4ff] mb-2">AFTER • OUR VOICE</p>
+                            <p class="text-white text-xl sm:text-2xl leading-tight">
+                                “The quiet confidence of money that moves exactly as you intend it to.”
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <section id="domains" class="section">
-      <div class="container split-grid">
-        <div class="section-heading">
-          <div class="eyebrow">Premium Domains</div>
-          <h2>Stronger names for brands that want stronger positioning.</h2>
-          <p>Premium domains are presented here as part of brand-building logic. A better name can improve credibility, memorability, and market impression before a customer reads a single line of copy.</p>
-        </div>
+    <!-- DIGITAL IDENTITY / DOMAINS -->
+    <section id="identity" class="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-slate-950 text-slate-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(480px,640px)] gap-10 xl:gap-14 items-start">
 
-        <div>
-          <div class="domains-grid">
-            <article class="domain-card">
-              <h3>Why it matters</h3>
-              <p>A premium domain can support better positioning from the first interaction.</p>
-              <ul>
-                <li>Stronger brand perception</li>
-                <li>Cleaner recall and memorability</li>
-                <li>Better fit for premium offers</li>
-              </ul>
-            </article>
-            <article class="domain-card">
-              <h3>How it fits here</h3>
-              <p>This is not separate from content work. It supports the same objective: improve how a business is perceived online.</p>
-              <ul>
-                <li>Brand wording and naming alignment</li>
-                <li>Digital identity improvement</li>
-                <li>Selected names available on request</li>
-              </ul>
-            </article>
-          </div>
+                <!-- LEFT -->
+                <div class="max-w-xl">
+                    <h2 class="section-title text-white">
+                        Your domain is the first sentence of your brand.
+                    </h2>
 
-          <div class="showcase-card" style="margin-top:18px;">
-            <h3>Premium domain opportunities, curated with brand logic in mind.</h3>
-            <p>Ask for available names if you are building a new brand, repositioning an existing one, or looking for a better domain than the one you currently use.</p>
-            <div class="metric-row">
-              <div class="metric">
-                <strong>Brand</strong>
-                <span>Name quality matters</span>
-              </div>
-              <div class="metric">
-                <strong>Clarity</strong>
-                <span>Stronger first impression</span>
-              </div>
-              <div class="metric">
-                <strong>Recall</strong>
-                <span>Better memorability</span>
-              </div>
+                    <p class="mt-6 sm:mt-8 text-lg sm:text-xl text-slate-300 leading-relaxed">
+                        We don’t sell domains. We curate addresses that already feel like they belong to you — before anyone reads a single word.
+                    </p>
+
+                    <div class="mt-10 sm:mt-12">
+                        <a
+                            href="mailto:domains@mazajcontent.com"
+                            class="text-[#00d4ff] uppercase text-xs sm:text-sm font-medium inline-flex items-center gap-x-2 hover:opacity-80 transition"
+                        >
+                            REQUEST CURATED SHORTLIST →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- RIGHT -->
+                <div class="w-full max-w-[640px] lg:ml-auto flex flex-col gap-3 sm:gap-4">
+                    <div class="domain-card bg-slate-900 border border-slate-800 rounded-2xl px-4 sm:px-5 py-4 sm:py-5">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
+                            <span class="text-xl sm:text-[1.65rem] leading-none font-medium tracking-tight text-white break-all sm:break-normal">
+                                CityLot.com
+                            </span>
+                            <span class="w-fit text-[10px] bg-blue-500/10 text-blue-400 px-3 py-1.5 rounded-md uppercase tracking-[0.14em]">
+                                Urban / Real Estate
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="domain-card bg-slate-900 border border-slate-800 rounded-2xl px-4 sm:px-5 py-4 sm:py-5">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
+                            <span class="text-xl sm:text-[1.65rem] leading-none font-medium tracking-tight text-white break-all sm:break-normal">
+                                DiamondFlights.com
+                            </span>
+                            <span class="w-fit text-[10px] bg-fuchsia-500/10 text-fuchsia-400 px-3 py-1.5 rounded-md uppercase tracking-[0.14em]">
+                                Luxury Travel
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="domain-card bg-slate-900 border border-slate-800 rounded-2xl px-4 sm:px-5 py-4 sm:py-5">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
+                            <span class="text-xl sm:text-[1.65rem] leading-none font-medium tracking-tight text-white break-all sm:break-normal">
+                                MonacoLife.com
+                            </span>
+                            <span class="w-fit text-[10px] bg-amber-500/10 text-amber-400 px-3 py-1.5 rounded-md uppercase tracking-[0.14em]">
+                                Luxury Lifestyle
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="domain-card bg-slate-900 border border-slate-800 rounded-2xl px-4 sm:px-5 py-4 sm:py-5">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
+                            <span class="text-xl sm:text-[1.65rem] leading-none font-medium tracking-tight text-white break-all sm:break-normal">
+                                LucidFin.com
+                            </span>
+                            <span class="w-fit text-[10px] bg-emerald-500/10 text-emerald-400 px-3 py-1.5 rounded-md uppercase tracking-[0.14em]">
+                                Fintech / Finance
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="domain-card bg-slate-900 border border-slate-800 rounded-2xl px-4 sm:px-5 py-4 sm:py-5">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
+                            <span class="text-xl sm:text-[1.65rem] leading-none font-medium tracking-tight text-white break-all sm:break-normal">
+                                Ervlo.com
+                            </span>
+                            <span class="w-fit text-[10px] bg-violet-500/10 text-violet-400 px-3 py-1.5 rounded-md uppercase tracking-[0.14em]">
+                                Brandable
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="actions" style="margin-top:22px;">
-              <a class="btn btn-primary" href="mailto:domains@mazajcontent.com">Request Domain Options</a>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
 
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="contact-card">
-          <div class="contact-grid">
-            <div>
-              <div class="eyebrow">Contact</div>
-              <h2 style="margin-top:16px;font-size:clamp(34px,4.2vw,54px);line-height:1.08;letter-spacing:-0.045em;">Need sharper translation, better content, or stronger naming?</h2>
-              <p style="margin-top:18px;max-width:760px;color:var(--muted);font-size:17px;line-height:1.9;">Contact Mazaj Content for translation, editing, content support, or curated premium domain opportunities aligned with your brand direction.</p>
+    <!-- TESTIMONIAL -->
+    <section class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="text-3xl sm:text-4xl lg:text-5xl leading-tight serif italic max-w-3xl mx-auto">
+                “Mazaj didn’t translate our brand.<br class="hidden sm:block">
+                They gave it a new, more powerful soul in Arabic, French, and English — all at once.”
             </div>
-            <div class="contact-actions">
-              <a class="btn btn-primary" href="mailto:hello@mazajcontent.com">hello@mazajcontent.com</a>
-              <a class="btn btn-secondary" href="mailto:domains@mazajcontent.com">domains@mazajcontent.com</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
 
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>Mazaj Content</div>
-      <div>Translation, content, and premium domain opportunities</div>
-    </div>
-  </footer>
+            <div class="mt-10 sm:mt-12 flex justify-center items-center gap-x-4">
+                <div class="w-10 h-10 bg-gradient-to-br from-[#00d4ff] to-cyan-400 rounded-2xl flex items-center justify-center text-xs font-bold">
+                    RM
+                </div>
+                <div class="text-left">
+                    <div class="font-semibold">Rami Mansour</div>
+                    <div class="text-slate-400 text-sm">Founder & CEO • LUXE Hospitality Group</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="connect" class="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#112233] to-[#0a1428]">
+        <div class="max-w-screen-2xl mx-auto text-center">
+            <h2 class="section-title mx-auto max-w-3xl">
+                Your brand deserves to be understood exactly as you intend.
+            </h2>
+
+            <p class="mt-5 sm:mt-6 text-xl sm:text-2xl text-slate-300 max-w-xl mx-auto">
+                Let’s make that happen — together.
+            </p>
+
+            <div class="mt-10 sm:mt-14">
+                <a
+                    href="mailto:hello@mazajcontent.com"
+                    class="inline-block px-8 sm:px-12 lg:px-16 py-5 sm:py-6 lg:py-8 text-lg sm:text-xl lg:text-2xl font-medium bg-white text-[#0a1428] hover:scale-105 rounded-3xl transition-transform"
+                >
+                    hello@mazajcontent.com
+                </a>
+            </div>
+
+            <p class="mt-8 sm:mt-10 text-slate-400 text-sm sm:text-base">
+                Studio • Middle East • Global reach • 2026 season now open
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-10 sm:py-12 px-4 sm:px-6 lg:px-8 border-t border-white/10 text-xs text-slate-400">
+        <div class="max-w-screen-2xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-5 lg:gap-6 text-center lg:text-left">
+            <div>© 2026 Mazaj Content Studio. All rights reserved.</div>
+
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-x-8 items-center">
+                <a href="mailto:hello@mazajcontent.com" class="hover:text-white transition">General Inquiries</a>
+                <a href="mailto:domains@mazajcontent.com" class="hover:text-white transition">Domain Opportunities</a>
+            </div>
+
+            <div class="text-[#00d4ff] text-[10px] tracking-[1px] uppercase">
+                Language is strategy. Perception is everything.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
 </body>
 </html>
