@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+/* =========================
+   DESIGN SYSTEM - Light & Clean
+========================= */
+
+:root {
+    --accent: #00d4ff;
+    --accent-dark: #00a8cc;
+    --bg-card: rgba(255, 255, 255, 0.05);
+    --border-card: rgba(255, 255, 255, 0.1);
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+}
+
+/* ============== CONTAINER ============== */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+@media (min-width: 640px)  { .container { padding-left: 2rem; padding-right: 2rem; } }
+@media (min-width: 1024px) { .container { max-width: 1420px; padding-left: 3rem; padding-right: 3rem; } }
+@media (min-width: 1280px) { .container { max-width: 1550px; padding-left: 4rem; padding-right: 4rem; } }
+@media (min-width: 1536px) { .container { max-width: 1720px; } }
+
+/* ============== SECTION ============== */
+.section {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
+.section:first-child {
+    padding-top: 0;
+}
+
+/* ============== TYPOGRAPHY ============== */
+.serif {
+    font-family: 'Playfair Display', serif;
+}
+
+.section-title {
+    font-size: clamp(2.25rem, 5vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    font-weight: 300;
+}
+
+/* ============== BUTTONS ============== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 9999px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* ============== CARDS ============== */
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: 1.75rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    border-color: rgba(0, 212, 255, 0.25);
+    box-shadow: 0 25px 50px -12px rgb(0 212 255 / 0.15);
+}
+
+/* =========================
+   YOUR ORIGINAL STYLES (Cleaned + Organized)
+========================= */
+
+html {
+    scroll-behavior: smooth;
+	scroll-padding-top: 80px;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--text-primary);
+    overflow-x: hidden;
+}
+
+/* Glass */
+.glass {
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(16px);
+}
+
+/* ============== HERO SPECIFIC SPACING ============== */
+.hero-grid {
+    padding-top: 9rem !important;   /* Increased from pt-32 */
+    padding-bottom: 7rem;
+}
+
+/* Navigation */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    height: 1.5px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Make sure nav has enough space below */
+nav {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+/* Logo */
+.logo-img {
+    height: 63px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(1.05);
+}
+
+/* Enhanced Card Hovers (keeping your original feel) */
+.service-card:hover,
+.process-card:hover,
+.deliverable-card:hover,
+.domain-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px -15px rgb(0 212 255 / 0.2);
+    border-color: rgba(0, 212, 255, 0.35);
+}
+
+/* Cursor */
+a, button, .nav-link, [role="button"] {
+    cursor: pointer !important;
+}
+
+.service-card, .process-card, .deliverable-card, .domain-card {
+    cursor: default !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 40px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .service-card { min-height: 380px; }
+    .process-card { min-height: 240px; }
+	    html {
+        scroll-padding-top: 95px;
+    }
+}
+
+/* GSAP & AOS */
+.gsap-reveal,
+#hero-text,
+#hero-card,
+.logo-img,
+.nav-link {
+    opacity: 0;
+}
+
+[data-aos] {
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1) !important;
+}
